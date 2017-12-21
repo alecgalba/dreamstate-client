@@ -51,7 +51,7 @@ class DreamForm extends Component {
   }
 }
 
-mapStateToProps = state => {
+const mapStateToProps = state => {
   return {
     dreamFormData: state.dreamFormData,
     errors: state.errors
