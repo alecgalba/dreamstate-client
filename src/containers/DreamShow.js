@@ -2,11 +2,11 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchDream } from '../actions/dreamActions';
 import { deleteDream } from '../actions/dreamActions';
-import DreamForm from './DreamForm';
-import DreamCard from './components/DreamCard';
-import Dreams from './Dreams';
+// import DreamForm from './DreamForm';
+// import DreamCard from '../components/DreamCard';
+// import Dreams from './Dreams';
 import LikeButton from '../components/LikeButton';
-import { likeDream } from '../actions.dreamActions';
+import { likeDream } from '../actions/dreamActions';
 
 class DreamShow extends Component {
 
@@ -14,8 +14,8 @@ class DreamShow extends Component {
     this.props.likeDream(this.props.dream[0])
   }
 
-  componentDidMount = () => {
-    this.props.fetchDream(this.props.matchparams.dreamId);
+  componentDidMount() {
+    this.props.fetchDream(this.props.match.params.dreamId);
   }
 
   render() {
@@ -27,21 +27,23 @@ class DreamShow extends Component {
         {dream ? (
           <div>
             <h1 className='dreamName'>{dream.name}</h1>
-            <h3><p>Description: <br />{dream.description}</p></h3>
-            <h3><p>Hours Asleep: <br />{dream.sleep_hours}</p></h3>
+            <h3><p>Description: <br></br>{dream.description}</p></h3>
+            <h3><p>Hours Asleep: <br></br>{dream.sleep_hours}</p></h3>
           </div>
         ) : (
           <p>Loading</p>
         )}
-        <br />
-        <button onClick={() => deleteDream(dream.id, history)}>Delete</button>
-        {dream ? <LikeButton dream={dream} likeDream={this.handleOnClick}/> : 'some error happened ¯\_(ツ)_/¯'}
+        <br></br>
+        <button onClick={() => deleteDream(dream.id, history)}>
+          Delete
+        </button>
+        {dream ? <LikeButton dream={dream} likeDream={this.handleOnClick}/> : 'some error happened'}
       </div>
     )
   }
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return ({
     dream: state.dreams
   })
