@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { connnect } from 'react-redux';
+import { connect } from 'react-redux';
 import '../App.css';
 import DreamCard from '../components/DreamCard';
 import DreamForm from './DreamForm';
@@ -8,7 +8,7 @@ import { getDreams } from '../actions/dreamActions';
 import { Switch, Route } from 'react-router-dom';
 import { likeDream } from '../actions/dreamActions';
 
-class Dream extends Component {
+class Dreams extends Component {
 
   componentDidMount() {
     this.props.getDreams()
