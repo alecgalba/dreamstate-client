@@ -1,4 +1,4 @@
-import Recat, { Component } from 'react';
+import React, { Component } from 'react';
 import '../App.css';
 import { connect } from 'react-redux';
 import { likeDream } from '../actions/dreamActions';
@@ -10,11 +10,10 @@ class DreamCard extends Component {
 
     return (
       <div key={dream.id} className='DreamCard'>
-        <a href={`dreams/${recipe.id}`}>
+        <a href={`dreams/${dream.id}`}>
           <h1 className='card-title'>{dream.name}</h1>
         </a>
         <br />
-        <img className='media' src= /*find a photo*/ alt="image" />
         <br />
         <div className="card-read">Read</div>
         <button onClick={() => {this.props.likeDream(dream, dreams)}}>Like</button> {this.props.dream.likes}
@@ -29,4 +28,4 @@ const mapStateToProps = state => {
   }
 }
 
-expor default connect(mapStateToProps, {likeDream})(DreamCard)
+export default connect(mapStateToProps, {likeDream})(DreamCard)
