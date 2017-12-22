@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { Container } from 'semantic-ui-react';
 import Navbar from './components/Navbar';
-import Home from './component/Home';
-import Dreams from './container/Dreams';
+import Home from './components/Home';
+import Dreams from './containers/Dreams';
 import DreamForm from './containers/DreamForm';
 import DreamShow from './containers/DreamShow';
 import About from './components/About';
