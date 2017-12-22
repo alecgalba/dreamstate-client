@@ -1,4 +1,4 @@
-import React { Component } from 'react';
+import React, { Component } from 'react';
 
 class LikeButton extends Component {
   render() {
@@ -10,4 +10,4 @@ class LikeButton extends Component {
   }
 }
 
-export default (likeButton);
+export default (LikeButton);
