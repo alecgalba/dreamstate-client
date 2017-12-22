@@ -12,7 +12,7 @@ export const setDreams = dreams => {
 
 export const addDream = dream => {
   return {
-    type: 'CREAT_DREAM',
+    type: 'CREATE_DREAM',
     dream
   }
 }
@@ -80,7 +80,7 @@ export const createDream = (dream, routerHistory) => {
 export const deleteDream = (dreamId, routerHistory) => {
   return dispatch => {
     return fetch(`${API_URL}/dreams/${dreamId}`, {
-      methos: 'DELETE'
+      method: 'DELETE'
     })
     .then(response => {
       dispatch(removeDream(dreamId));
