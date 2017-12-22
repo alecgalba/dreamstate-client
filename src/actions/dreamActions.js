@@ -32,10 +32,10 @@ export const addLikes = dream => {
 }
 
 //Async actions
-export const getDreams = () => {
+export const getDreams= () => {
   return dispatch => {
-    return fetch(`${API_URL}/recipes`)
-      .then(res => res.json())
+    return fetch(`${API_URL}/dreams`)
+    .then(res => res.json())
     .then(dreams => {
       dispatch(setDreams(dreams))
     })
@@ -44,14 +44,14 @@ export const getDreams = () => {
 }
 
 export const fetchDream = (dreamId) => {
-  return dispatch => {
-    return fetch(`${API_URL}/dreams/${dreamId}`)
-      .then(response => response.json())
-      .then(dream => {
-        dispatch(setDreams([dream]));
-      })
-      .catch(error => console.log(error));
-  }
+	return dispatch => {
+		return fetch(`${API_URL}/dreams/${dreamId}`)
+			.then(response => response.json())
+			.then(dream => {
+				dispatch(setDreams(dream));
+			})
+			.catch(error => console.log(error));
+	}
 }
 
 export const createDream = (dream, routerHistory) => {
@@ -102,8 +102,8 @@ export const likeDream = (dream, dreams) => {
     })
     .then(response => response.json())
     .then(dream => {
-      dispatch(addLikes(recipe))
-      dispatch(addLikes(recipes))
+      dispatch(addLikes(dream))
+      dispatch(addLikes(dreams))
     })
     .catch(error => console.log(error))
   }
