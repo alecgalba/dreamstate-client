@@ -2,7 +2,7 @@ import { resetDreamForm } from './dreamForm';
 
 const API_URL = process.env.REACT_APP_API_URL;
 
-//Action Creators
+// Action Creators
 export const setDreams = dreams => {
   return {
     type: 'GET_DREAMS',
@@ -12,7 +12,7 @@ export const setDreams = dreams => {
 
 export const addDream = dream => {
   return {
-    type: 'CREATE_DREAM',
+    type:'CREATE_Dream',
     dream
   }
 }
@@ -31,15 +31,18 @@ export const addLikes = dream => {
   }
 }
 
-//Async actions
+
+// Async actions
 export const getDreams= () => {
   return dispatch => {
-    return fetch(`${API_URL}/dreams`)
+    return fetch(`${API_URL}/dreams`, {
+      mode: 'no-cors',
+    })
     .then(res => res.json())
     .then(dreams => {
       dispatch(setDreams(dreams))
     })
-    .catch(xhr => console.warn(xhr.responseText));
+    .catch(error => console.log(error));
   }
 }
 
@@ -48,7 +51,7 @@ export const fetchDream = (dreamId) => {
 		return fetch(`${API_URL}/dreams/${dreamId}`)
 			.then(response => response.json())
 			.then(dream => {
-				dispatch(setDreams(dream));
+				dispatch(setDreams([dream]));
 			})
 			.catch(error => console.log(error));
 	}
@@ -57,7 +60,7 @@ export const fetchDream = (dreamId) => {
 export const createDream = (dream, routerHistory) => {
   return dispatch => {
     return fetch(`${API_URL}/dreams`, {
-      method: 'POST',
+      method: "POST",
       headers: {
         'Content-Type': 'application/json'
       },
@@ -73,45 +76,45 @@ export const createDream = (dream, routerHistory) => {
     .catch(error => {
       dispatch({type: 'error'})
       routerHistory.replace(`/dreams/new`)
-    })
+     })
   }
 }
 
 export const deleteDream = (dreamId, routerHistory) => {
   return dispatch => {
     return fetch(`${API_URL}/dreams/${dreamId}`, {
-      method: 'DELETE'
+      method: "DELETE"
     })
     .then(response => {
       dispatch(removeDream(dreamId));
-      routerHistory.replace('/dreams')
+      routerHistory.replace('/dreams');
     })
     .catch(error => console.log(error))
   }
 }
 
 export const likeDream = (dream, dreams) => {
-  const updateDream = Object.assign(...dream, { likes: dream.likes + 1})
+  const updatedDream = Object.assign(...dream, { likes: dream.likes + 1 })
   return dispatch => {
     return fetch(`${API_URL}/dreams/${dream.id}`, {
-      method: 'PUT',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({dream: updateDream})
-    })
-    .then(response => response.json())
-    .then(dream => {
-      dispatch(addLikes(dream))
-      dispatch(addLikes(dreams))
-    })
+      method: "PUT",
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({dream: updatedDream})
+      })
+      .then(response => response.json())
+      .then(dream => {
+        dispatch(addLikes(dream))
+        dispatch(addLikes(dreams))
+      })
     .catch(error => console.log(error))
   }
 }
 
-function handleErrors(response) {
+function handleErrors(response){
   if (!response.ok) {
-    throw Error(response.statustText);
+    throw Error(response.statusText);
   }
   return response;
 }
