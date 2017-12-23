@@ -9,12 +9,6 @@
   padding-top: 20px;
 }
 
-/** Nav Links **/
-.home img {
-  height: 5151px;
-  width: 500px;
-}
-
 /** Dream Card **/
 
 .DreamCard {
@@ -33,6 +27,12 @@
 .media {
   width: 200px;
   height: 160px;
+  padding-top: 30px;
+}
+
+.homemedia {
+  width: 640px;
+  height: 427px;
   padding-top: 30px;
 }
 

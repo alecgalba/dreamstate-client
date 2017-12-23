@@ -46,6 +46,7 @@ class DreamForm extends Component {
             <button type='submit' onClick={this.handleOnSubmit}>Add Dream</button>
           </div>
         </form>
+        <h1>Happy Dreaming!</h1>
       </div>
     )
   }

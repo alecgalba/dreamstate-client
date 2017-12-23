@@ -14,8 +14,8 @@ class DreamCard extends Component {
           <h1 className='card-title'>{dream.name}</h1>
         </a>
         <br />
+        <img src="http://beautifuldecay.com/wp-content/uploads/2012/05/Takeshi-Suga-Photography-1.jpg" alt="" className="media" />
         <br />
-        <div className="card-read">Read</div>
         <button onClick={() => {this.props.likeDream(dream, dreams)}}>Like</button> {this.props.dream.likes}
       </div>
     )

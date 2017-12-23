@@ -84,7 +84,6 @@ export const deleteDream = (dreamId, routerHistory) => {
   return dispatch => {
     return fetch(`${API_URL}/dreams/${dreamId}`, {
       method: "DELETE",
-      mode: 'no-cors'
     })
     .then(response => {
       dispatch(removeDream(dreamId));
@@ -99,7 +98,6 @@ export const likeDream = (dream, dreams) => {
   return dispatch => {
     return fetch(`${API_URL}/dreams/${dream.id}`, {
       method: "PUT",
-      mode: 'no-cors',
       headers: {
           'Content-Type': 'application/json'
         },
