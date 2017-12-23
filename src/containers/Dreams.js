@@ -16,28 +16,28 @@ class Dreams extends Component {
 
   render() {
     const { dreams, match } = this.props;
-    const sortedDreams = dreams.sort(function(a,b) {
-      return b.likes - a.like;
-    })
+    const sortedDreams = dreams.sort(function(a, b) {
+            return b.likes - a.likes;
+          })
 
     return (
       <div>
-        <Switch>
-        <Route exact path={match.url}
-          render={() =>
-        <div className='DreamsContainer'>
-        <h1 className='dreamName'>Dreams</h1>
-          {sortedDreams.map(dream => <DreamCard key={dream.id} dream={dream} />)}
-        </div>
-      }
-      />
-      <Route exact path='/dreams/new' component={DreamForm}/>
-          <Route
-            path='/dreams/:dreamId'
-            component={DreamShow}
-          />
-        </Switch>
+      <Switch>
+      <Route exact path={match.url}
+       render={() =>
+      <div className="DreamsContainer">
+      <h1 className="dreamName">Dreams</h1>
+        {sortedDreams.map(dream => <DreamCard key={dream.id} dream={dream} /> )}
       </div>
+    }
+    />
+    <Route exact path="/dreams/new" component={DreamForm}/>
+         <Route
+           path="/dreams/:dreamId"
+           component={DreamShow}
+         />
+       </Switch>
+     </div>
     )
   }
 }

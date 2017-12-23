@@ -36,7 +36,7 @@ export const addLikes = dream => {
 export const getDreams= () => {
   return dispatch => {
     return fetch(`${API_URL}/dreams`, {
-      mode: 'no-cors',
+      method: "GET",
     })
     .then(res => res.json())
     .then(dreams => {
@@ -83,7 +83,8 @@ export const createDream = (dream, routerHistory) => {
 export const deleteDream = (dreamId, routerHistory) => {
   return dispatch => {
     return fetch(`${API_URL}/dreams/${dreamId}`, {
-      method: "DELETE"
+      method: "DELETE",
+      mode: 'no-cors'
     })
     .then(response => {
       dispatch(removeDream(dreamId));
@@ -98,7 +99,8 @@ export const likeDream = (dream, dreams) => {
   return dispatch => {
     return fetch(`${API_URL}/dreams/${dream.id}`, {
       method: "PUT",
-        headers: {
+      mode: 'no-cors',
+      headers: {
           'Content-Type': 'application/json'
         },
         body: JSON.stringify({dream: updatedDream})

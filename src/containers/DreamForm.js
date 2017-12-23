@@ -6,8 +6,8 @@ import FormError from '../components/FormError';
 
 class DreamForm extends Component {
 
-  handleOnChange = event => {
-    const {name, value} = event.target;
+  handleOnChange = e => {
+    const {name, value} = e.target;
     const currentDreamFormData = Object.assign({}, this.props.dreamFormData, {
       [name]: value
     })
