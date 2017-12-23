@@ -58,7 +58,4 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps, {
-  updateDreamFormData,
-  createDream
-})(DreamForm)
+export default connect(mapStateToProps, {updateDreamFormData, createDream})(DreamForm)

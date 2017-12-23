@@ -39,7 +39,7 @@ export const getDreams= () => {
     .then(dreams => {
       dispatch(setDreams(dreams))
     })
-    .catch(error => console.log(error));
+    .catch(xhr => console.warn(xhr.responseText));
   }
 }
 
@@ -72,7 +72,7 @@ export const createDream = (dream, routerHistory) => {
     })
     .catch(error => {
       dispatch({type: 'error'})
-      routerHistory.replace(`/recipes/new`)
+      routerHistory.replace(`/dreams/new`)
     })
   }
 }
