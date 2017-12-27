@@ -2,9 +2,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchDream } from '../actions/dreamActions';
 import { deleteDream } from '../actions/dreamActions';
-// import DreamForm from './DreamForm';
-// import DreamCard from '../components/DreamCard';
-// import Dreams from './Dreams';
 import LikeButton from '../components/LikeButton';
 import { likeDream } from '../actions/dreamActions';
 
