@@ -17,7 +17,7 @@ class DreamShow extends Component {
 
   render() {
     let dream = this.props.dream[0];
-    const {deleteDream, history} = this.props;
+    const {deleteDream, history, id} = this.props;
 
     return (
       <div className='dreamShow'>
