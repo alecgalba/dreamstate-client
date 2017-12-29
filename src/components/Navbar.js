@@ -12,6 +12,7 @@ const Navbar = () => {
         </Menu.Item>
         <Menu.Item as={Link} to='/dreams' name='Your Dreams'></Menu.Item>
         <Menu.Item as={Link} to='/dreams/new' name='Create New Dream'></Menu.Item>
+        <Menu.Item as={Link} to='/dreams/top' name='Top Dreams'></Menu.Item>
         <Menu.Item as={Link} to='/about' name='About Page'></Menu.Item>
         <Menu.Item as={Link} to='/contact' name='Contact Page'>
           <Icon name='mail' />
