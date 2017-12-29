@@ -5,6 +5,7 @@ import { deleteDream } from '../actions/dreamActions';
 import LikeButton from '../components/LikeButton';
 import { likeDream } from '../actions/dreamActions';
 
+
 class DreamShow extends Component {
 
   handleOnClick = () => {
@@ -17,7 +18,7 @@ class DreamShow extends Component {
 
   render() {
     let dream = this.props.dream[0];
-    const {deleteDream, history, id} = this.props;
+    const {deleteDream, history} = this.props;
 
     return (
       <div className='dreamShow'>
