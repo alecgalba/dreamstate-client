@@ -6,7 +6,8 @@ export default (state = [], action) => {
       return action.dreams;
 
     case 'CREATE_DREAM':
-      return state.concat(action.dream);
+      return [...state, action.dream]
+      //return state.concat(action.dream);
 
     case 'REMOVE_DREAM':
       return state.filter(dream => dream.id !== action.dreamId);
