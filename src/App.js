@@ -9,6 +9,7 @@ import DreamForm from './containers/DreamForm';
 import DreamShow from './containers/DreamShow';
 import About from './components/About';
 import Contact from './components/Contact';
+import TopDreams from './components/TopDreams';
 
 class App extends Component {
   render() {
@@ -20,6 +21,7 @@ class App extends Component {
             <Container>
               <Switch>
                 <Route exact path='/' component={Home} />
+                <Route exact path='/dreams/top' component={TopDreams} />
                 <Route exact path='/dreams' component={Dreams} />
                 <Route exact path='/dreams/new' component={DreamForm} />
                 <Route exact path='/dreams/:dreamId' component={DreamShow} />
