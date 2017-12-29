@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import '../App.css';
 import DreamCard from '../components/DreamCard';
-// import DreamForm from '../containers/DreamForm';
-// import DreamShow from '../containers/DreamShow';
 import { getDreams } from '../actions/dreamActions';
 import { Route } from 'react-router-dom';
 import { likeDream } from '../actions/dreamActions';
