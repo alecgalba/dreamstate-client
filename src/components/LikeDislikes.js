@@ -26,7 +26,7 @@ class LikeDislikes extends Component {
       <div>
         <button onClick={ this.increaseLike}>Like</button>
         <button onClick={this.decreaseLike}>Dislike</button>
-        <div>{this.state.counter}</div>
+        {this.state.counter}
       </div>
     )
   }

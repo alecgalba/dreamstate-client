@@ -33,7 +33,7 @@ class Dreams extends Component {
     />
     <Route exact path="/dreams/new" component={DreamForm}/>
          <Route
-           path="/dreams/:dreamId"
+           exact path="/dreams/:dreamId"
            component={DreamShow}
          />
        </Switch>
