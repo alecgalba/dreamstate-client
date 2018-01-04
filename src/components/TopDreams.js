@@ -20,7 +20,7 @@ class TopDreams extends Component {
 
     return (
       <div>
-      // <Route exact path={match.url}
+      <Route exact path={match.url}
        render={() =>
       <div className="DreamsContainer">
       <h1 className="dreamName">Most And Least Popular Dreams</h1>
