@@ -3,7 +3,6 @@ import '../App.css';
 import { connect } from 'react-redux';
 import { likeDream } from '../actions/dreamActions';
 import { Link } from 'react-router-dom';
-import LikeDislikes from './LikeDislikes';
 
 
 class DreamCard extends Component {
