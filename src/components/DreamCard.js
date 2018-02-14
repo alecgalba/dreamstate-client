@@ -18,7 +18,6 @@ class DreamCard extends Component {
         <img src="http://beautifuldecay.com/wp-content/uploads/2012/05/Takeshi-Suga-Photography-1.jpg" alt="" className="media" />
         <br />
         <button onClick={() => this.props.likeDream(dream, dreams)}>Like</button> {dream.likes}
-        <LikeDislikes />
       </div>
     )
   }
