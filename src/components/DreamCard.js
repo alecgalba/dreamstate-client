@@ -8,19 +8,19 @@ import LikeDislikes from './LikeDislikes';
 
 class DreamCard extends Component {
 
-  callApi = () => {
-    console.log('a')
-    const API_URL = process.env.REACT_APP_API_URL;
-     fetch(`${API_URL}/dreams`, {
-      method: "GET",
-    })
-    .then(res => {
-      console.log('b')
-      return res.json()})
-    .then(dreams => console.log('c',dreams))
-    .catch(err => console.log('d', err))
-    console.log('e')
-  }
+  // callApi = () => {
+  //   console.log('a')
+  //   const API_URL = process.env.REACT_APP_API_URL;
+  //    fetch(`${API_URL}/dreams`, {
+  //     method: "GET",
+  //   })
+  //   .then(res => {
+  //     console.log('b')
+  //     return res.json()})
+  //   .then(dreams => console.log('c',dreams))
+  //   .catch(err => console.log('d', err))
+  //   console.log('e')
+  // }
 
   render() {
     const { dream, dreams } = this.props;
